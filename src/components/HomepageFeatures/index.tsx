@@ -3,50 +3,72 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
+import {
+  CircleHelp,
+  Check,
+  Code,
+  Lightbulb,
+} from 'lucide-react';
+
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Icon: React.ComponentType<{size?: number}>;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'What is Mya?',
+    Icon: CircleHelp,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Mya is an easy to use formal language used to write the specification of a
+        {" "}<a href="https://en.wikipedia.org/wiki/Instruction_set_architecture" target="_blank">Instruction Set Architecture</a> (ISA).
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Why use Mya?',
+    Icon: Lightbulb,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        <ul className={styles.iconList}>
+          <li className={styles.iconListItem}>
+            <Check size={18} className={styles.iconListItemIcon} />
+            Easy to learn and read.
+          </li>
+          <li className={styles.iconListItem}>
+            <Check size={18} className={styles.iconListItemIcon} />
+            Is a formal way to document the ISA.
+          </li>
+          <li className={styles.iconListItem}>
+            <Check size={18} className={styles.iconListItemIcon} />
+            Auto-generate assembler and disassembler (coming soon).
+          </li>
+          <li className={styles.iconListItem}>
+            <Check size={18} className={styles.iconListItemIcon} />
+            Easy to use library for who want to do an amazing tool with Mya language.
+          </li>
+        </ul>
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Open Source',
+    Icon: Code,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Mya Project is fully open source and always will be.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, Icon, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <Icon size={48} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
