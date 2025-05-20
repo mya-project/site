@@ -4,7 +4,10 @@ on:
   push:
     branches: ["main"]
     paths:
+      - "blog/**"
+      - "docs/**"
       - "src/**"
+      - "static/**"
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
